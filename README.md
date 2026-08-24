@@ -1,9 +1,7 @@
-# webmd-adverse-drug-reaction-detectionusing-NLP-machine-learning-and-deep-learning
-NLP, machine learning, and deep learning project to detect known and potential adverse drug reactions (ADRs) from WebMD patient reviews.
 
-# Detecting Adverse Drug Reaction Signals from WebMD Reviews
+# Detecting Adverse Drug Reaction Signals from WebMD Reviews using-NLP-machine-learning-and-deep-learning
 
-## NLP, Machine Learning, Deep Learning & Interactive Dashboard
+**NLP, Machine Learning, Deep Learning & Interactive Dashboard**
 
 ## Overview
 
@@ -586,3 +584,15 @@ Among the evaluated models, the **Deep Neural Network with dropout achieved the 
 
 By combining **NLP, feature engineering, machine learning, deep learning, explainable AI, and an interactive dashboard**, this project provides a foundation for exploring how patient-generated data could support post-market drug-safety surveillance and pharmacovigilance.
 
+---
+## Project Team
+
+This project was developed as part of **ADS-504: Machine Learning and Deep Learning for Data Science** at the **Shiley-Marcos School of Engineering, University of San Diego**.
+
+### Team Members
+
+* **Sheshma Jaganathan**
+* **Aishwarya Kuduvalli**
+* **Sushma Kafle**
+
+The project was completed collaboratively, including data preprocessing, NLP-based ADR extraction, exploratory data analysis, feature engineering, machine learning, deep learning, model evaluation, and interpretation.
