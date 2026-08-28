@@ -38,12 +38,13 @@ The objective of this project is to:
 
 ## Dataset
 
-The project uses the **WebMD Patient Drug Reviews Dataset** obtained from Kaggle.
 
-### Original Dataset
+This project uses the **WebMD Drug Reviews Dataset**, containing **320,094 patient drug reviews and 12 variables**. The ADR classification target is constructed during data preprocessing.
 
-* **362,806 patient reviews**
-* **12 original variables**
+The original dataset is not stored in this repository due to its large file size.
+
+📂 [Dataset Information and Download Instructions](data/README.md)
+
 
 The dataset contains information about:
 
@@ -62,9 +63,7 @@ The dataset contains information about:
 | `Sides`         | Official side effects listed for the medication      |
 | `UsefulCount`   | Number of users who found the review useful          |
 
-After data cleaning and preprocessing, the final dataset contained:
 
-**320,094 patient reviews**
 ---
 
 ## Project Structure
@@ -74,6 +73,9 @@ The complete data preprocessing, NLP pipeline, feature engineering, model traini
 Running the notebook master_project_file.ipynb will generate and save the files dropout_dnn.keras, transformation.pkl, transformation.pkl, label_encoder.pkl, webmd_final.csv which can be used in dashboard.
 
 ![WebMD ADR Project Workflow](images/WEBMED_PROJECT_WORKFLOW.png)
+
+
+
 
 ```text
 webmd-adverse-drug-reaction-detection/
@@ -101,14 +103,29 @@ webmd-adverse-drug-reaction-detection/
 │   └── Python dependencies required to reproduce the project
 │
 ├── README.md
-│   └── Project documentation
+│   └── Main project documentation
 │
 ├── .gitignore
 │   └── Files and folders excluded from Git tracking
 │
-└── data/
-    └── webmd.csv
-        └── Original WebMD patient review dataset
+├── data/
+│   └── README.md
+│       └── Original dataset information and Kaggle download link
+│
+├── images/
+│   └── WEBMED_PROJECT_WORKFLOW.png
+│       └── Project workflow diagram
+│
+├── reports/
+│   ├── README.md
+│   └── project_report.pdf
+│       └── Final project report
+│
+└── presentation/
+    ├── README.md
+    └── project_presentation.pdf
+        └── Final project presentation
+
 ```
 > The original dataset may not be included in the repository because of file size and data-source restrictions.
 
