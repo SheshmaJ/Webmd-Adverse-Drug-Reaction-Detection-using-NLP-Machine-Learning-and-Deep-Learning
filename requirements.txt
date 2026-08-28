@@ -1,0 +1,10 @@
+streamlit
+pandas
+numpy
+joblib
+tensorflow
+scikit-learn==1.6.1
+nltk
+spacy
+contractions
+rapidfuzz
