@@ -367,52 +367,98 @@ This analysis helps explain which characteristics of patient reviews influence A
 
 ---
 
-## Interactive ADR Dashboard 🚧
+## Interactive ADR Dashboard
 
-> **Status: Planned / In Development**
+An interactive **Streamlit dashboard** was developed to demonstrate the ADR detection pipeline on new patient reviews.
 
-An interactive dashboard will be added to make the results easier to explore and interpret.
+The dashboard allows users to:
 
-The dashboard is planned to provide:
+- Select a medication from the WebMD dataset.
+- Enter a new patient review.
+- Process the review using the NLP pipeline.
+- Extract adverse drug reactions (ADRs) mentioned in the review.
+- Predict the review category using the trained deep learning model:
+  - **Known ADR**
+  - **Potential ADR Signal**
+  - **No ADR Mention**
+- Display the model's prediction confidence.
+- Compare detected ADRs with the medication's official side effects.
+- Identify whether a detected ADR matches a known side effect or represents a potential ADR signal.
 
-* Overall ADR summary.
-* Known vs. Potential vs. No ADR distribution.
-* Drug-level ADR analysis.
-* Most frequently reported ADRs.
-* Potential ADR signals by medication.
-* ADR trends over time.
-* Patient satisfaction and effectiveness patterns.
-* Review-level exploration.
-* Model performance metrics.
-* Confusion matrix.
-* SHAP-based model interpretation.
-
-### Future Monitoring Concept
-
-A future version could support continuous ADR monitoring:
+### Dashboard Workflow
 
 ```text
-New Patient Review
+Patient Review + Drug
         ↓
-NLP Processing
+Text Preprocessing
         ↓
 ADR Extraction
         ↓
-Model Prediction
+Feature Engineering
         ↓
-Known ADR / Potential Signal / No ADR
+Trained DNN Model
         ↓
-Dashboard Monitoring
+ADR Classification
         ↓
-Repeated Unexpected ADRs
+Known ADR / Potential ADR Signal / No ADR Mention
         ↓
-Potential Safety Alert
+Comparison with Official Drug Side Effects
+        ↓
+Interactive Dashboard Results
+```
+
+### Running the Dashboard Locally
+## How to Run the Project
+
+### 1. Clone the repository
+
+```bash
+git clone <repository-url>
+cd webmd-adverse-drug-reaction-detection
+```
+
+### 2. Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 3. Verify Required Files
+
+The dashboard requires the following files:
+
+- `dropout_dnn.keras` — trained deep learning model
+- `transformation.pkl` — fitted TF-IDF and feature transformation pipeline
+- `label_encoder.pkl` — ADR category label encoder
+- `webmd_final.csv` — processed WebMD dataset used by the dashboard
+- 
+### 4. Launch the Dashboard:
+
+```bash
+streamlit run app.py
+```
+
+### Future Monitoring Concept
+
+The current dashboard analyzes individual patient reviews. A future version could extend the system to monitor incoming reviews over time.
+
+```text
+New Patient Reviews
+        ↓
+ADR Detection
+        ↓
+Potential ADR Signals
+        ↓
+Aggregate by Drug and ADR
+        ↓
+Repeated Unexpected ADR Patterns
+        ↓
+Potential Safety Signal for Further Investigation
 ```
 
 If the same unexpected ADR is repeatedly reported for a particular medication, the system could flag the pattern for further investigation.
 
-**Important:** A potential ADR signal represents a pattern that may require investigation. It does not establish that a medication caused the reported reaction.
-
+> **Important:** This dashboard is a research and educational prototype. A predicted potential ADR signal does not establish that a medication caused the reported reaction and should not be interpreted as medical advice or a confirmed safety alert.
 ---
 
 ## Technology Stack
@@ -452,7 +498,7 @@ If the same unexpected ADR is repeatedly reported for a particular medication, t
 
 ### Dashboard
 
-* Interactive dashboard – **planned**
+* Interactive dashboard 
 
 ### Development Environment
 
@@ -461,86 +507,47 @@ If the same unexpected ADR is repeatedly reported for a particular medication, t
 
 ---
 
-## Repository Structure
+## Project Structure
 
 ```text
 webmd-adverse-drug-reaction-detection/
 │
-├── README.md
+├── app.py
+│   └── Streamlit dashboard application
+│
+├── master_project_file.ipynb
+│   └── Data preprocessing, NLP, EDA, feature engineering,
+│       model training, and evaluation
+│
+├── dropout_dnn.keras
+│   └── Trained deep learning model
+│
+├── transformation.pkl
+│   └── Fitted TF-IDF and feature transformation pipeline
+│
+├── label_encoder.pkl
+│   └── ADR category label encoder
+│
+├── webmd_final.csv
+│   └── Processed dataset used by the dashboard
+│
 ├── requirements.txt
+│   └── Python dependencies required to reproduce the project
 │
-├── notebooks/
-│   └── webmd_adr_analysis.ipynb
+├── README.md
+│   └── Project documentation
 │
-├── dashboard/
-│   └── dashboard files
-│
-├── images/
-│   ├── eda/
-│   ├── model_results/
-│   └── dashboard/
-│
-├── models/
-│   └── trained model files
+├── .gitignore
+│   └── Files and folders excluded from Git tracking
 │
 └── data/
-    └── README.md
+    └── webmd.csv
+        └── Original WebMD patient review dataset
 ```
-
 > The original dataset may not be included in the repository because of file size and data-source restrictions.
 
 ---
 
-## How to Run the Project
-
-### 1. Clone the repository
-
-```bash
-git clone <repository-url>
-cd webmd-adverse-drug-reaction-detection
-```
-
-### 2. Install dependencies
-
-```bash
-pip install -r requirements.txt
-```
-
-### 3. Add the Dataset
-
-Download the WebMD Drug Reviews dataset and place it in the appropriate data directory.
-
-### 4. Run the Analysis
-
-Run the project notebook to reproduce:
-
-```text
-Data Loading
-     ↓
-Data Cleaning
-     ↓
-NLP Preprocessing
-     ↓
-ADR Extraction
-     ↓
-Feature Engineering
-     ↓
-EDA
-     ↓
-Machine Learning
-     ↓
-Deep Learning
-     ↓
-Model Evaluation
-     ↓
-SHAP Explainability
-```
-
-### 5. Launch the Dashboard
-
-Dashboard launch instructions will be added after dashboard development is completed.
-
----
 
 ## Limitations
 
