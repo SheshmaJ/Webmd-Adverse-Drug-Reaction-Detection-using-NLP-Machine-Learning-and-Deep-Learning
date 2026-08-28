@@ -65,6 +65,52 @@ The dataset contains information about:
 After data cleaning and preprocessing, the final dataset contained:
 
 **320,094 patient reviews**
+---
+
+## Project Structure
+
+The complete data preprocessing, NLP pipeline, feature engineering, model training, and evaluation are available in:[`master_project_file.ipynb`](master_project_file.ipynb)
+
+Running the notebook master_project_file.ipynb will generate and save the files dropout_dnn.keras, transformation.pkl, transformation.pkl, label_encoder.pkl, webmd_final.csv which can be used in dashboard.
+
+![WebMD ADR Project Workflow](images/WEBMED_PROJECT_WORKFLOW.png)
+
+```text
+webmd-adverse-drug-reaction-detection/
+│
+├── app.py
+│   └── Streamlit dashboard application
+│
+├── master_project_file.ipynb
+│   └── Data preprocessing, NLP, EDA, feature engineering,
+│       model training, and evaluation
+│
+├── dropout_dnn.keras
+│   └── Trained deep learning model
+│
+├── transformation.pkl
+│   └── Fitted TF-IDF and feature transformation pipeline
+│
+├── label_encoder.pkl
+│   └── ADR category label encoder
+│
+├── webmd_final.csv
+│   └── Processed dataset used by the dashboard
+│
+├── requirements.txt
+│   └── Python dependencies required to reproduce the project
+│
+├── README.md
+│   └── Project documentation
+│
+├── .gitignore
+│   └── Files and folders excluded from Git tracking
+│
+└── data/
+    └── webmd.csv
+        └── Original WebMD patient review dataset
+```
+> The original dataset may not be included in the repository because of file size and data-source restrictions.
 
 ---
 
@@ -411,50 +457,6 @@ This analysis helps explain which characteristics of patient reviews influence A
 * Google Colab
 * GitHub
 
----
-
-## Project Structure
-
-The complete data preprocessing, NLP pipeline, feature engineering, model training, and evaluation are available in:[`master_project_file.ipynb`](master_project_file.ipynb)
-
-Running the notebook master_project_file.ipynb will generate and save the files dropout_dnn.keras, transformation.pkl, transformation.pkl, label_encoder.pkl, webmd_final.csv which can be used in dashboard.
-
-```text
-webmd-adverse-drug-reaction-detection/
-│
-├── app.py
-│   └── Streamlit dashboard application
-│
-├── master_project_file.ipynb
-│   └── Data preprocessing, NLP, EDA, feature engineering,
-│       model training, and evaluation
-│
-├── dropout_dnn.keras
-│   └── Trained deep learning model
-│
-├── transformation.pkl
-│   └── Fitted TF-IDF and feature transformation pipeline
-│
-├── label_encoder.pkl
-│   └── ADR category label encoder
-│
-├── webmd_final.csv
-│   └── Processed dataset used by the dashboard
-│
-├── requirements.txt
-│   └── Python dependencies required to reproduce the project
-│
-├── README.md
-│   └── Project documentation
-│
-├── .gitignore
-│   └── Files and folders excluded from Git tracking
-│
-└── data/
-    └── webmd.csv
-        └── Original WebMD patient review dataset
-```
-> The original dataset may not be included in the repository because of file size and data-source restrictions.
 
 ---
 
