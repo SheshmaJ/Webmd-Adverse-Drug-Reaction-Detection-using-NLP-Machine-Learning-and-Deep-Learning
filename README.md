@@ -410,11 +410,12 @@ Interactive Dashboard Results
 ### Running the Dashboard Locally
 ## How to Run the Project
 
-### 1. Clone the repository
+### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd webmd-adverse-drug-reaction-detection
+git clone https://github.com/SheshmaJ/Webmd-Adverse-Drug-Reaction-Detection-using-NLP-Machine-Learning-and-Deep-Learning.git
+
+cd Webmd-Adverse-Drug-Reaction-Detection-using-NLP-Machine-Learning-and-Deep-Learning
 ```
 
 ### 2. Install dependencies
